@@ -5,11 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sherlock Holmes Canon</title>
 <style>
-  :root { color-scheme: light dark; --bg:#fff; --fg:#1a1a1a; --mute:#666; --line:#ddd;
-          --head:#f3f3f3; --link:#0b5cad; }
+  /* same three page modes as the story pages (data/html/paper.js sets the class) */
+  :root { color-scheme: light dark; --bg:#fbf8ef; --fg:#1d1a14; --mute:#756f60; --line:#d9d1bc;
+          --head:#f1ecdd; --link:#7a2e1d; }
   @media (prefers-color-scheme: dark) {
-    :root { --bg:#16181b; --fg:#e6e6e6; --mute:#9aa0a6; --line:#33373d;
-            --head:#1f2328; --link:#7db7f0; } }
+    :root { --bg:#241b13; --fg:#e3d7c4; --mute:#a8957a; --line:#4b3c2c;
+            --head:#2e241a; --link:#dba46c; } }
+  html.light { color-scheme: light; --bg:#fbf8ef; --fg:#1d1a14; --mute:#756f60; --line:#d9d1bc;
+               --head:#f1ecdd; --link:#7a2e1d; }
+  html.dark { color-scheme: dark; --bg:#241b13; --fg:#e3d7c4; --mute:#a8957a; --line:#4b3c2c;
+              --head:#2e241a; --link:#dba46c; }
+  html.aged { color-scheme: light; --bg:#e3d7c4; --fg:#3a352e; --mute:#756a58; --line:#c4b69c;
+              --head:#d8cbb4; --link:#5c2312; }
+  nav.top { float:right; font-size:.85rem; }
+  label.mode { margin-left:.8em; white-space:nowrap; }
+  label.mode select { appearance:none; -webkit-appearance:none; font:inherit; color:var(--link);
+    background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%238a7f6c'/%3E%3C/svg%3E") no-repeat right .1em center;
+    border:0; padding:0 .9em 0 0; margin:0; cursor:pointer; outline-offset:3px; }
+  label.mode select:hover { text-decoration:underline; }
+  label.mode select option { color:var(--fg); background:var(--bg); }
   body { margin:0; padding:16px; background:var(--bg); color:var(--fg);
          font:15px/1.4 system-ui, sans-serif; }
   h1 { font-size:1.2rem; margin:0 0 4px; }
@@ -25,15 +39,11 @@
   td:nth-child(3), td:nth-child(4) { white-space:nowrap; font-variant-numeric:tabular-nums; }
   a { color:var(--link); }
 </style>
+<script src="data/html/paper.js"></script>
 </head>
 <body>
+<nav class="top"><a href="data/html/index.html">Table of Contents</a></nav>
 <h1>Sherlock Holmes Canon</h1>
-<p class="note">60 works. Click a column heading to sort. Dates are MM-YYYY
-(first UK and first US appearance; novels fall back to the US book if no serial is stated).
-<code>00-YYYY*</code> = month unknown (indeterminate);
-it sorts before the dated months of that year.
-The code opens the plain text in <code>data/stories/</code>; the title opens the typeset page in
-<code>data/html/</code> (<a href="data/html/index.html">all stories</a>).</p>
 <div class="wrap">
 <table id="t">
 <thead><tr>
