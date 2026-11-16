@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sherlock Holmes Canon</title>
+<style>
+  :root { color-scheme: light dark; --bg:#fff; --fg:#1a1a1a; --mute:#666; --line:#ddd;
+          --head:#f3f3f3; --link:#0b5cad; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#16181b; --fg:#e6e6e6; --mute:#9aa0a6; --line:#33373d;
+            --head:#1f2328; --link:#7db7f0; } }
+  body { margin:0; padding:16px; background:var(--bg); color:var(--fg);
+         font:15px/1.4 system-ui, sans-serif; }
+  h1 { font-size:1.2rem; margin:0 0 4px; }
+  p.note { margin:0 0 12px; color:var(--mute); font-size:.85rem; }
+  .wrap { overflow-x:auto; }
+  table { border-collapse:collapse; width:100%; min-width:720px; }
+  th, td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--line);
+           vertical-align:top; }
+  th { background:var(--head); cursor:pointer; user-select:none; white-space:nowrap;
+       position:sticky; top:0; }
+  th[aria-sort="ascending"]::after { content:" \25B2"; }
+  th[aria-sort="descending"]::after { content:" \25BC"; }
+  td:nth-child(3), td:nth-child(4) { white-space:nowrap; font-variant-numeric:tabular-nums; }
+  a { color:var(--link); }
+</style>
+</head>
+<body>
+<h1>Sherlock Holmes Canon</h1>
+<p class="note">60 works. Click a column heading to sort. Dates are MM-YYYY
+(first UK and first US appearance; novels fall back to the US book if no serial is stated).
+<code>00-YYYY*</code> = month unknown (indeterminate);
+it sorts before the dated months of that year.
+The code opens the plain text in <code>data/stories/</code>; the title opens the typeset page in
+<code>data/html/</code> (<a href="data/html/index.html">all stories</a>).</p>
+<div class="wrap">
+<table id="t">
+<thead><tr>
+<th data-type="text">Code</th><th data-type="text">Title</th>
+<th data-type="num">UK first</th><th data-type="num">US first</th>
+<th data-type="none">Summary</th>
+</tr></thead>
+<tbody>
+<tr><td data-k="STUD"><a href="data/stories/STUD.txt">STUD</a></td><td data-k="a study in scarlet"><a href="data/html/STUD/STUD.html">A Study in Scarlet</a></td><td data-k="188711">11-1887</td><td data-k="189000">00-1890*</td><td>Holmes and Watson meet; a mysterious murder in Brixton.</td></tr>
+<tr><td data-k="SIGN"><a href="data/stories/SIGN.txt">SIGN</a></td><td data-k="the sign of the four"><a href="data/html/SIGN/SIGN.html">The Sign of the Four</a></td><td data-k="189002">02-1890</td><td data-k="189002">02-1890</td><td>A lady&#x27;s puzzle leads Holmes to the Agra treasure.</td></tr>
+<tr><td data-k="HOUN"><a href="data/stories/HOUN.txt">HOUN</a></td><td data-k="the hound of the baskervilles"><a href="data/html/HOUN/HOUN.html">The Hound of the Baskervilles</a></td><td data-k="190108">08-1901</td><td data-k="190200">00-1902*</td><td>Spectral hound haunts the Baskerville family on Dartmoor.</td></tr>
+<tr><td data-k="VALL"><a href="data/stories/VALL.txt">VALL</a></td><td data-k="the valley of fear"><a href="data/html/VALL/VALL.html">The Valley of Fear</a></td><td data-k="191409">09-1914</td><td data-k="191409">09-1914</td><td>A coded warning precedes a murder at Birlstone Manor.</td></tr>
+<tr><td data-k="SCAN"><a href="data/stories/SCAN.txt">SCAN</a></td><td data-k="a scandal in bohemia"><a href="data/html/SCAN/SCAN.html">A Scandal in Bohemia</a></td><td data-k="189107">07-1891</td><td data-k="189108">08-1891</td><td>A king hires Holmes to retrieve a compromising photograph.</td></tr>
+<tr><td data-k="REDH"><a href="data/stories/REDH.txt">REDH</a></td><td data-k="the red-headed league"><a href="data/html/REDH/REDH.html">The Red-Headed League</a></td><td data-k="189108">08-1891</td><td data-k="189109">09-1891</td><td>A red-haired pawnbroker takes a strangely lucrative job.</td></tr>
+<tr><td data-k="IDEN"><a href="data/stories/IDEN.txt">IDEN</a></td><td data-k="a case of identity"><a href="data/html/IDEN/IDEN.html">A Case of Identity</a></td><td data-k="189109">09-1891</td><td data-k="189110">10-1891</td><td>A woman&#x27;s fiance vanishes on the way to the church.</td></tr>
+<tr><td data-k="BOSC"><a href="data/stories/BOSC.txt">BOSC</a></td><td data-k="the boscombe valley mystery"><a href="data/html/BOSC/BOSC.html">The Boscombe Valley Mystery</a></td><td data-k="189110">10-1891</td><td data-k="189111">11-1891</td><td>A son is accused of murdering his father.</td></tr>
+<tr><td data-k="FIVE"><a href="data/stories/FIVE.txt">FIVE</a></td><td data-k="the five orange pips"><a href="data/html/FIVE/FIVE.html">The Five Orange Pips</a></td><td data-k="189111">11-1891</td><td data-k="189112">12-1891</td><td>Five orange pips arrive as a deadly warning.</td></tr>
+<tr><td data-k="TWIS"><a href="data/stories/TWIS.txt">TWIS</a></td><td data-k="the man with the twisted lip"><a href="data/html/TWIS/TWIS.html">The Man with the Twisted Lip</a></td><td data-k="189112">12-1891</td><td data-k="189201">01-1892</td><td>A husband vanishes after a visit to an opium den.</td></tr>
+<tr><td data-k="BLUE"><a href="data/stories/BLUE.txt">BLUE</a></td><td data-k="the blue carbuncle"><a href="data/html/BLUE/BLUE.html">The Blue Carbuncle</a></td><td data-k="189201">01-1892</td><td data-k="189202">02-1892</td><td>A lost Christmas goose and a stolen jewel.</td></tr>
+<tr><td data-k="SPEC"><a href="data/stories/SPEC.txt">SPEC</a></td><td data-k="the speckled band"><a href="data/html/SPEC/SPEC.html">The Speckled Band</a></td><td data-k="189202">02-1892</td><td data-k="189203">03-1892</td><td>A dying woman&#x27;s last words: &#x27;the speckled band&#x27;.</td></tr>
+<tr><td data-k="ENGR"><a href="data/stories/ENGR.txt">ENGR</a></td><td data-k="the engineer&#x27;s thumb"><a href="data/html/ENGR/ENGR.html">The Engineer&#x27;s Thumb</a></td><td data-k="189203">03-1892</td><td data-k="189204">04-1892</td><td>An engineer&#x27;s strange night job costs him a thumb.</td></tr>
+<tr><td data-k="NOBL"><a href="data/stories/NOBL.txt">NOBL</a></td><td data-k="the noble bachelor"><a href="data/html/NOBL/NOBL.html">The Noble Bachelor</a></td><td data-k="189204">04-1892</td><td data-k="189205">05-1892</td><td>A bride vanishes at her wedding breakfast.</td></tr>
+<tr><td data-k="BERY"><a href="data/stories/BERY.txt">BERY</a></td><td data-k="the beryl coronet"><a href="data/html/BERY/BERY.html">The Beryl Coronet</a></td><td data-k="189205">05-1892</td><td data-k="189206">06-1892</td><td>A banker&#x27;s stolen coronet jewels; his son seems guilty.</td></tr>
+<tr><td data-k="COPP"><a href="data/stories/COPP.txt">COPP</a></td><td data-k="the copper beeches"><a href="data/html/COPP/COPP.html">The Copper Beeches</a></td><td data-k="189206">06-1892</td><td data-k="189207">07-1892</td><td>A governess accepts a peculiar post with strange conditions.</td></tr>
+<tr><td data-k="SILV"><a href="data/stories/SILV.txt">SILV</a></td><td data-k="silver blaze"><a href="data/html/SILV/SILV.html">Silver Blaze</a></td><td data-k="189212">12-1892</td><td data-k="189301">01-1893</td><td>A famous racehorse vanishes and its trainer is found dead.</td></tr>
+<tr><td data-k="YELL"><a href="data/stories/YELL.txt">YELL</a></td><td data-k="the yellow face"><a href="data/html/YELL/YELL.html">The Yellow Face</a></td><td data-k="189302">02-1893</td><td data-k="189302">02-1893</td><td>A husband follows his wife&#x27;s secret visits to a cottage.</td></tr>
+<tr><td data-k="STOC"><a href="data/stories/STOC.txt">STOC</a></td><td data-k="the stockbroker&#x27;s clerk"><a href="data/html/STOC/STOC.html">The Stockbroker&#x27;s Clerk</a></td><td data-k="189303">03-1893</td><td data-k="189303">03-1893</td><td>A clerk is offered a suspiciously good new position.</td></tr>
+<tr><td data-k="GLOR"><a href="data/stories/GLOR.txt">GLOR</a></td><td data-k="the gloria scott"><a href="data/html/GLOR/GLOR.html">The Gloria Scott</a></td><td data-k="189304">04-1893</td><td data-k="189304">04-1893</td><td>Holmes&#x27;s first case: a cryptic message terrifies a landowner.</td></tr>
+<tr><td data-k="MUSG"><a href="data/stories/MUSG.txt">MUSG</a></td><td data-k="the musgrave ritual"><a href="data/html/MUSG/MUSG.html">The Musgrave Ritual</a></td><td data-k="189305">05-1893</td><td data-k="189305">05-1893</td><td>A strange family ritual and a vanished butler.</td></tr>
+<tr><td data-k="REIG"><a href="data/stories/REIG.txt">REIG</a></td><td data-k="the reigate squire"><a href="data/html/REIG/REIG.html">The Reigate Squire</a></td><td data-k="189306">06-1893</td><td data-k="189306">06-1893</td><td>A convalescing Holmes investigates a burglary and murder in Surrey.</td></tr>
+<tr><td data-k="CROO"><a href="data/stories/CROO.txt">CROO</a></td><td data-k="the crooked man"><a href="data/html/CROO/CROO.html">The Crooked Man</a></td><td data-k="189307">07-1893</td><td data-k="189307">07-1893</td><td>A colonel is found dead in a locked room.</td></tr>
+<tr><td data-k="RESI"><a href="data/stories/RESI.txt">RESI</a></td><td data-k="the resident patient"><a href="data/html/RESI/RESI.html">The Resident Patient</a></td><td data-k="189308">08-1893</td><td data-k="189308">08-1893</td><td>A doctor&#x27;s nervous resident patient is found dead.</td></tr>
+<tr><td data-k="GREE"><a href="data/stories/GREE.txt">GREE</a></td><td data-k="the greek interpreter"><a href="data/html/GREE/GREE.html">The Greek Interpreter</a></td><td data-k="189309">09-1893</td><td data-k="189309">09-1893</td><td>An interpreter is abducted for a night job; Mycroft debuts.</td></tr>
+<tr><td data-k="NAVA"><a href="data/stories/NAVA.txt">NAVA</a></td><td data-k="the naval treaty"><a href="data/html/NAVA/NAVA.html">The Naval Treaty</a></td><td data-k="189310">10-1893</td><td data-k="189310">10-1893</td><td>A secret naval treaty vanishes from a Foreign Office clerk.</td></tr>
+<tr><td data-k="FINA"><a href="data/stories/FINA.txt">FINA</a></td><td data-k="the final problem"><a href="data/html/FINA/FINA.html">The Final Problem</a></td><td data-k="189312">12-1893</td><td data-k="189312">12-1893</td><td>Holmes faces his arch-enemy, Professor Moriarty.</td></tr>
+<tr><td data-k="EMPT"><a href="data/stories/EMPT.txt">EMPT</a></td><td data-k="the empty house"><a href="data/html/EMPT/EMPT.html">The Empty House</a></td><td data-k="190310">10-1903</td><td data-k="190309">09-1903</td><td>A locked-room murder in Park Lane baffles London.</td></tr>
+<tr><td data-k="NORW"><a href="data/stories/NORW.txt">NORW</a></td><td data-k="the norwood builder"><a href="data/html/NORW/NORW.html">The Norwood Builder</a></td><td data-k="190311">11-1903</td><td data-k="190310">10-1903</td><td>A young solicitor is accused of murdering a builder.</td></tr>
+<tr><td data-k="DANC"><a href="data/stories/DANC.txt">DANC</a></td><td data-k="the dancing men"><a href="data/html/DANC/DANC.html">The Dancing Men</a></td><td data-k="190312">12-1903</td><td data-k="190312">12-1903</td><td>Stick-figure messages terrify a Norfolk gentleman&#x27;s wife.</td></tr>
+<tr><td data-k="SOLI"><a href="data/stories/SOLI.txt">SOLI</a></td><td data-k="the solitary cyclist"><a href="data/html/SOLI/SOLI.html">The Solitary Cyclist</a></td><td data-k="190401">01-1904</td><td data-k="190312">12-1903</td><td>A mysterious cyclist follows a young governess.</td></tr>
+<tr><td data-k="PRIO"><a href="data/stories/PRIO.txt">PRIO</a></td><td data-k="the priory school"><a href="data/html/PRIO/PRIO.html">The Priory School</a></td><td data-k="190402">02-1904</td><td data-k="190401">01-1904</td><td>A duke&#x27;s son vanishes from school; a teacher is murdered.</td></tr>
+<tr><td data-k="BLAC"><a href="data/stories/BLAC.txt">BLAC</a></td><td data-k="black peter"><a href="data/html/BLAC/BLAC.html">Black Peter</a></td><td data-k="190403">03-1904</td><td data-k="190402">02-1904</td><td>An ex-whaler is harpooned in his cabin.</td></tr>
+<tr><td data-k="CHAS"><a href="data/stories/CHAS.txt">CHAS</a></td><td data-k="charles augustus milverton"><a href="data/html/CHAS/CHAS.html">Charles Augustus Milverton</a></td><td data-k="190404">04-1904</td><td data-k="190403">03-1904</td><td>Holmes takes on the ruthless blackmailer Charles Milverton.</td></tr>
+<tr><td data-k="SIXN"><a href="data/stories/SIXN.txt">SIXN</a></td><td data-k="the six napoleons"><a href="data/html/SIXN/SIXN.html">The Six Napoleons</a></td><td data-k="190405">05-1904</td><td data-k="190404">04-1904</td><td>Someone is smashing Napoleon busts across London.</td></tr>
+<tr><td data-k="3STU"><a href="data/stories/3STU.txt">3STU</a></td><td data-k="the three students"><a href="data/html/3STU/3STU.html">The Three Students</a></td><td data-k="190406">06-1904</td><td data-k="190409">09-1904</td><td>An exam paper is tampered with; three suspects.</td></tr>
+<tr><td data-k="GOLD"><a href="data/stories/GOLD.txt">GOLD</a></td><td data-k="the golden pince-nez"><a href="data/html/GOLD/GOLD.html">The Golden Pince-Nez</a></td><td data-k="190407">07-1904</td><td data-k="190410">10-1904</td><td>A professor&#x27;s secretary is murdered at a country house.</td></tr>
+<tr><td data-k="MISS"><a href="data/stories/MISS.txt">MISS</a></td><td data-k="the missing three-quarter"><a href="data/html/MISS/MISS.html">The Missing Three-Quarter</a></td><td data-k="190408">08-1904</td><td data-k="190411">11-1904</td><td>A rugby star vanishes before the big match.</td></tr>
+<tr><td data-k="ABBE"><a href="data/stories/ABBE.txt">ABBE</a></td><td data-k="the abbey grange"><a href="data/html/ABBE/ABBE.html">The Abbey Grange</a></td><td data-k="190409">09-1904</td><td data-k="190412">12-1904</td><td>A baronet is killed during an apparent burglary.</td></tr>
+<tr><td data-k="SECO"><a href="data/stories/SECO.txt">SECO</a></td><td data-k="the second stain"><a href="data/html/SECO/SECO.html">The Second Stain</a></td><td data-k="190412">12-1904</td><td data-k="190501">01-1905</td><td>A missing letter could trigger a European war.</td></tr>
+<tr><td data-k="WIST"><a href="data/stories/WIST.txt">WIST</a></td><td data-k="wisteria lodge"><a href="data/html/WIST/WIST.html">Wisteria Lodge</a></td><td data-k="190809">09-1908</td><td data-k="190808">08-1908</td><td>A sudden dinner invitation ends in a mysterious death.</td></tr>
+<tr><td data-k="CARD"><a href="data/stories/CARD.txt">CARD</a></td><td data-k="the cardboard box"><a href="data/html/CARD/CARD.html">The Cardboard Box</a></td><td data-k="189301">01-1893</td><td data-k="189301">01-1893</td><td>A woman receives two severed ears by post.</td></tr>
+<tr><td data-k="REDC"><a href="data/stories/REDC.txt">REDC</a></td><td data-k="the red circle"><a href="data/html/REDC/REDC.html">The Red Circle</a></td><td data-k="191103">03-1911</td><td data-k="191104">04-1911</td><td>A landlady&#x27;s silent lodger baffles everyone.</td></tr>
+<tr><td data-k="BRUC"><a href="data/stories/BRUC.txt">BRUC</a></td><td data-k="the bruce-partington plans"><a href="data/html/BRUC/BRUC.html">The Bruce-Partington Plans</a></td><td data-k="190812">12-1908</td><td data-k="190812">12-1908</td><td>Dead clerk, missing submarine plans, Mycroft&#x27;s secret request.</td></tr>
+<tr><td data-k="DYIN"><a href="data/stories/DYIN.txt">DYIN</a></td><td data-k="the dying detective"><a href="data/html/DYIN/DYIN.html">The Dying Detective</a></td><td data-k="191312">12-1913</td><td data-k="191311">11-1913</td><td>Holmes lies dying of a mysterious tropical disease.</td></tr>
+<tr><td data-k="LADY"><a href="data/stories/LADY.txt">LADY</a></td><td data-k="the disappearance of lady frances carfax"><a href="data/html/LADY/LADY.html">The Disappearance of Lady Frances Carfax</a></td><td data-k="191112">12-1911</td><td data-k="191112">12-1911</td><td>A lady travelling alone on the Continent vanishes.</td></tr>
+<tr><td data-k="DEVI"><a href="data/stories/DEVI.txt">DEVI</a></td><td data-k="the devil&#x27;s foot"><a href="data/html/DEVI/DEVI.html">The Devil&#x27;s Foot</a></td><td data-k="191012">12-1910</td><td data-k="191101">01-1911</td><td>A Cornish family is found mad and dead.</td></tr>
+<tr><td data-k="LAST"><a href="data/stories/LAST.txt">LAST</a></td><td data-k="his last bow"><a href="data/html/LAST/LAST.html">His Last Bow</a></td><td data-k="191709">09-1917</td><td data-k="191709">09-1917</td><td>Holmes leaves retirement on the eve of war.</td></tr>
+<tr><td data-k="MAZA"><a href="data/stories/MAZA.txt">MAZA</a></td><td data-k="the mazarin stone"><a href="data/html/MAZA/MAZA.html">The Mazarin Stone</a></td><td data-k="192110">10-1921</td><td data-k="192111">11-1921</td><td>The priceless Crown diamond has been stolen.</td></tr>
+<tr><td data-k="THOR"><a href="data/stories/THOR.txt">THOR</a></td><td data-k="the problem of thor bridge"><a href="data/html/THOR/THOR.html">The Problem of Thor Bridge</a></td><td data-k="192202">02-1922</td><td data-k="192202">02-1922</td><td>A millionaire&#x27;s wife is shot beside a bridge.</td></tr>
+<tr><td data-k="CREE"><a href="data/stories/CREE.txt">CREE</a></td><td data-k="the creeping man"><a href="data/html/CREE/CREE.html">The Creeping Man</a></td><td data-k="192303">03-1923</td><td data-k="192303">03-1923</td><td>A respected professor begins behaving very strangely.</td></tr>
+<tr><td data-k="SUSS"><a href="data/stories/SUSS.txt">SUSS</a></td><td data-k="the sussex vampire"><a href="data/html/SUSS/SUSS.html">The Sussex Vampire</a></td><td data-k="192401">01-1924</td><td data-k="192401">01-1924</td><td>A Sussex mother is suspected of vampirism.</td></tr>
+<tr><td data-k="3GAR"><a href="data/stories/3GAR.txt">3GAR</a></td><td data-k="the three garridebs"><a href="data/html/3GAR/3GAR.html">The Three Garridebs</a></td><td data-k="192501">01-1925</td><td data-k="192410">10-1924</td><td>An American seeks three men named Garrideb.</td></tr>
+<tr><td data-k="ILLU"><a href="data/stories/ILLU.txt">ILLU</a></td><td data-k="the illustrious client"><a href="data/html/ILLU/ILLU.html">The Illustrious Client</a></td><td data-k="192502">02-1925</td><td data-k="192411">11-1924</td><td>A general&#x27;s daughter is engaged to a notorious Baron.</td></tr>
+<tr><td data-k="3GAB"><a href="data/stories/3GAB.txt">3GAB</a></td><td data-k="the three gables"><a href="data/html/3GAB/3GAB.html">The Three Gables</a></td><td data-k="192610">10-1926</td><td data-k="192609">09-1926</td><td>Thugs and an odd offer disturb a widow&#x27;s house.</td></tr>
+<tr><td data-k="BLAN"><a href="data/stories/BLAN.txt">BLAN</a></td><td data-k="the blanched soldier"><a href="data/html/BLAN/BLAN.html">The Blanched Soldier</a></td><td data-k="192611">11-1926</td><td data-k="192610">10-1926</td><td>A soldier mysteriously shuns his family and friends.</td></tr>
+<tr><td data-k="LION"><a href="data/stories/LION.txt">LION</a></td><td data-k="the lion&#x27;s mane"><a href="data/html/LION/LION.html">The Lion&#x27;s Mane</a></td><td data-k="192612">12-1926</td><td data-k="192611">11-1926</td><td>Retired Holmes investigates a death on the Sussex coast.</td></tr>
+<tr><td data-k="RETI"><a href="data/stories/RETI.txt">RETI</a></td><td data-k="the retired colourman"><a href="data/html/RETI/RETI.html">The Retired Colourman</a></td><td data-k="192701">01-1927</td><td data-k="192612">12-1926</td><td>A retired colourman&#x27;s wife vanishes with her lover.</td></tr>
+<tr><td data-k="VEIL"><a href="data/stories/VEIL.txt">VEIL</a></td><td data-k="the veiled lodger"><a href="data/html/VEIL/VEIL.html">The Veiled Lodger</a></td><td data-k="192702">02-1927</td><td data-k="192701">01-1927</td><td>A veiled woman confesses a long-hidden tragedy.</td></tr>
+<tr><td data-k="SHOS"><a href="data/stories/SHOS.txt">SHOS</a></td><td data-k="shoscombe old place"><a href="data/html/SHOS/SHOS.html">Shoscombe Old Place</a></td><td data-k="192704">04-1927</td><td data-k="192703">03-1927</td><td>A racehorse owner behaves strangely before a big race.</td></tr>
+</tbody>
+</table>
+</div>
+<script>
+(function () {
+  var table = document.getElementById("t");
+  var body = table.tBodies[0];
+  var heads = table.tHead.rows[0].cells;
+  function sortBy(i, dir) {
+    var num = heads[i].dataset.type === "num";
+    var rows = Array.prototype.slice.call(body.rows);
+    rows.sort(function (a, b) {
+      var x = a.cells[i].dataset.k, y = b.cells[i].dataset.k;
+      var c = num ? Number(x) - Number(y) : x.localeCompare(y, undefined, {numeric: true});
+      return (c || a.rowIndex - b.rowIndex) * dir;
+    });
+    rows.forEach(function (r) { body.appendChild(r); });
+    for (var j = 0; j < heads.length; j++) heads[j].removeAttribute("aria-sort");
+    heads[i].setAttribute("aria-sort", dir === 1 ? "ascending" : "descending");
+  }
+  for (var i = 0; i < heads.length; i++) {
+    if (heads[i].dataset.type === "none") continue;
+    heads[i].addEventListener("click", (function (i) {
+      return function () {
+        sortBy(i, heads[i].getAttribute("aria-sort") === "ascending" ? -1 : 1);
+      };
+    })(i));
+  }
+  sortBy(2, 1);  /* default: UK first appearance */
+})();
+</script>
+</body>
+</html>

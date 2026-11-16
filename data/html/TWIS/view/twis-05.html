@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;HE IS A PROFESSIONAL BEGGAR.&quot; &middot; The Man with the Twisted Lip</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../TWIS.html">&larr; Back to the story: The Man with the Twisted Lip</a></nav>
+<figure class="full">
+<img src="../images/full/twis-05.jpg" alt="A crippled man sits on the pavement begging.">
+<figcaption>&quot;HE IS A PROFESSIONAL BEGGAR.&quot;</figcaption>
+<small class="credit">Picture 5 of 10 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Strand1891-V2_0624_(cropped).png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="twis-04.html">&larr; Previous picture</a><a class="step" href="twis-06.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "twis-05";
+document.getElementById("back").href = "../TWIS.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&#x27;Hudson it is, Sir,&#x27; said the seaman. &middot; The “_Gloria Scott_”</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../GLOR.html">&larr; Back to the story: The “_Gloria Scott_”</a></nav>
+<figure class="full">
+<img src="../images/full/glor-02.jpg" alt="A sailor speaks to men seated on garden chairs">
+<figcaption>&#x27;Hudson it is, Sir,&#x27; said the seaman.</figcaption>
+<small class="credit">Picture 2 of 7 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Strand_Magazine_(Volume_5)_-_p398.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="glor-01.html">&larr; Previous picture</a><a class="step" href="glor-03.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "glor-02";
+document.getElementById("back").href = "../GLOR.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

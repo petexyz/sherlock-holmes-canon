@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;I will wish you all a very good night.&quot; &middot; The Adventure of the Noble Bachelor</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../NOBL.html">&larr; Back to the story: The Adventure of the Noble Bachelor</a></nav>
+<figure class="full">
+<img src="../images/full/nobl-08.jpg" alt="Lord St. Simon makes a sweeping bow and prepares to leave the room.">
+<figcaption>&quot;I will wish you all a very good night.&quot;</figcaption>
+<small class="credit">Picture 8 of 8 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Strand1892-V3_0395_(cropped).png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="nobl-07.html">&larr; Previous picture</a><span></span></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "nobl-08";
+document.getElementById("back").href = "../NOBL.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

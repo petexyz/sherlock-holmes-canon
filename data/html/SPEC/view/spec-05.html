@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;we got off, paid our fare.&quot; &middot; The Adventure of the Speckled Band</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../SPEC.html">&larr; Back to the story: The Adventure of the Speckled Band</a></nav>
+<figure class="full">
+<img src="../images/full/spec-05.jpg" alt="Holmes and Watson get off a trap and pay the driver.">
+<figcaption>&quot;we got off, paid our fare.&quot;</figcaption>
+<small class="credit">Picture 5 of 9 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Strand1892-V3_0149_(cropped).png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="spec-04.html">&larr; Previous picture</a><a class="step" href="spec-06.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "spec-05";
+document.getElementById("back").href = "../SPEC.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

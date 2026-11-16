@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why, if it isn&#x27;t Mr. Phelps! &middot; The Naval Treaty</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../NAVA.html">&larr; Back to the story: The Naval Treaty</a></nav>
+<figure class="full">
+<img src="../images/full/nava-05.jpg" alt="A woman with a shawl confronts two gentlemen in a kitchen">
+<figcaption>Why, if it isn&#x27;t Mr. Phelps!</figcaption>
+<small class="credit">Picture 5 of 15 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Naval_Treaty_06,_The_Strand_Magazine,_Vol_6.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="nava-04.html">&larr; Previous picture</a><a class="step" href="nava-06.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "nava-05";
+document.getElementById("back").href = "../NAVA.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;I held up a warning finger.&quot; &middot; The Reigate Squires</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../REIG.html">&larr; Back to the story: The Reigate Squires</a></nav>
+<figure class="full">
+<img src="../images/full/reig-01.jpg" alt="Holmes lies on a couch while Watson raises a warning finger">
+<figcaption>&quot;I held up a warning finger.&quot;</figcaption>
+<small class="credit">Picture 1 of 7 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Reigate_Squire_01,_The_Strand_Magazine,_Vol_5.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><span></span><a class="step" href="reig-02.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "reig-01";
+document.getElementById("back").href = "../REIG.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

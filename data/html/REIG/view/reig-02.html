@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;Inspector Forrester.&quot; &middot; The Reigate Squires</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../REIG.html">&larr; Back to the story: The Reigate Squires</a></nav>
+<figure class="full">
+<img src="../images/full/reig-02.jpg" alt="Watson and a butler stand at an open door as Inspector Forrester arrives">
+<figcaption>&quot;Inspector Forrester.&quot;</figcaption>
+<small class="credit">Picture 2 of 7 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Reigate_Squire_02,_The_Strand_Magazine,_Vol_5.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="reig-01.html">&larr; Previous picture</a><a class="step" href="reig-03.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "reig-02";
+document.getElementById("back").href = "../REIG.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

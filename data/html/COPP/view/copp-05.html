@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;I READ FOR ABOUT TEN MINUTES.&quot; &middot; The Adventure of the Copper Beeches</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../COPP.html">&larr; Back to the story: The Adventure of the Copper Beeches</a></nav>
+<figure class="full">
+<img src="../images/full/copp-05.jpg" alt="Miss Hunter reads aloud to Mr. Rucastle.">
+<figcaption>&quot;I READ FOR ABOUT TEN MINUTES.&quot;</figcaption>
+<small class="credit">Picture 5 of 9 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Strand1892-V3_0616_(cropped).png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="copp-04.html">&larr; Previous picture</a><a class="step" href="copp-06.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "copp-05";
+document.getElementById("back").href = "../COPP.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

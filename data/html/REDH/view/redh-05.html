@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;The door was shut and locked.&quot; &middot; The Red-Headed League</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../REDH.html">&larr; Back to the story: The Red-Headed League</a></nav>
+<figure class="full">
+<img src="../images/full/redh-05.jpg" alt="Jabez Wilson stands staring at a shut door with a card tacked to it.">
+<figcaption>&quot;The door was shut and locked.&quot;</figcaption>
+<small class="credit">Picture 5 of 10 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Strand1891-V2_0195_(cropped).png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="redh-04.html">&larr; Previous picture</a><a class="step" href="redh-06.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "redh-05";
+document.getElementById("back").href = "../REDH.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

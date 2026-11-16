@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What may you be wantin&#x27;? &middot; The Yellow Face</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../YELL.html">&larr; Back to the story: The Yellow Face</a></nav>
+<figure class="full">
+<img src="../images/full/yell-03.jpg" alt="A woman peers from a cottage doorway at a gentleman with a cane">
+<figcaption>What may you be wantin&#x27;?</figcaption>
+<small class="credit">Picture 3 of 7 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Strand_Magazine_(Volume_5)_-_p166.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="yell-02.html">&larr; Previous picture</a><a class="step" href="yell-04.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "yell-03";
+document.getElementById("back").href = "../YELL.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

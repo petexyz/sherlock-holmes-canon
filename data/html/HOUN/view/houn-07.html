@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I SAW HIS EYES FIX THEMSELVES OVER MY SHOULDER. &middot; The Hound of the Baskervilles</title>
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../HOUN.html">&larr; Back to the story: The Hound of the Baskervilles</a></nav>
+<figure class="full">
+<img src="../images/full/houn-07.jpg" alt="A man in a long coat at an open doorway, with a horse behind him, speaking to a man standing in the entrance.">
+<figcaption>I SAW HIS EYES FIX THEMSELVES OVER MY SHOULDER.</figcaption>
+<small class="credit">Picture 8 of 60 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Houn-07.jpg">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="houn-06.html">&larr; Previous picture</a><a class="step" href="houn-28.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "houn-07";
+document.getElementById("back").href = "../HOUN.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

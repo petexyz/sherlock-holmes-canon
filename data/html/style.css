@@ -1,0 +1,90 @@
+@font-face { font-family: "Old Standard TT"; font-weight: 400; font-style: normal;
+             src: url("fonts/OldStandard-Regular.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Old Standard TT"; font-weight: 400; font-style: italic;
+             src: url("fonts/OldStandard-Italic.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Old Standard TT"; font-weight: 700; font-style: normal;
+             src: url("fonts/OldStandard-Bold.ttf") format("truetype"); font-display: swap; }
+
+:root {
+  /* change the typeface for every story page here */
+  --body-font: "Old Standard TT", "Libre Caslon Text", Georgia, "Times New Roman", serif;
+  --bg: #fbf8ef; --fg: #1d1a14; --mute: #756f60; --rule: #d9d1bc; --link: #7a2e1d;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #17160f; --fg: #e8e3d3; --mute: #9a937e; --rule: #3a372a; --link: #d89a85; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body-font);
+       font-size: 1.2rem; line-height: 1.58; }
+a { color: var(--link); }
+nav.top { padding: 10px 16px; font-size: .85rem; color: var(--mute); border-bottom: 1px solid var(--rule); }
+nav.top a { margin: 0 .3em; }
+article { max-width: 46rem; margin: 0 auto; padding: 24px 18px 56px; }
+header { text-align: center; margin-bottom: 1.6em; }
+.series { font-style: italic; font-size: 1.5rem; margin: .2em 0 .1em; }
+h1 { font-weight: 400; font-size: 1.7rem; letter-spacing: .04em; text-transform: uppercase;
+     margin: .2em 0 .25em; line-height: 1.2; }
+.byline { font-variant: small-caps; letter-spacing: .08em; margin: .2em 0; }
+.dateline { font-size: .8rem; color: var(--mute); margin: .2em 0 0; }
+.story { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.story p { margin: 0; text-indent: 1.3em; }
+.story p.first, .story h2 + p, .story h3 + p, .story figure + p, .story blockquote + p,
+.story p.front + p, .story p.ornament + p { text-indent: 0; }
+.story p.dropcap::first-letter { float: left; font-size: 3.6em; line-height: .8; padding: .08em .1em 0 0;
+                               font-weight: 400; }
+.story h2 { text-align: center; font-weight: 400; font-size: 1.25rem; letter-spacing: .06em;
+            text-transform: uppercase; margin: 2.2em 0 .8em; }
+.story h2 .sub { display: block; font-size: 1rem; letter-spacing: .04em; font-variant: small-caps;
+                 text-transform: none; margin-top: .25em; }
+.story h2.part { font-size: 1.45rem; }
+.story h3.sec { text-align: center; font-weight: 400; font-size: 1.05rem; letter-spacing: .12em;
+                margin: 1.8em 0 .7em; }
+.story p.front { text-indent: 0; text-align: center; font-variant: small-caps; letter-spacing: .06em; }
+.story blockquote { margin: .9em 0 .9em 1.6em; padding-left: .9em; border-left: 2px solid var(--rule);
+                    font-size: 1.04rem; line-height: 1.5; }
+.story blockquote p { text-indent: 0; text-align: left; }
+.story .ornament, .story .end { text-align: center; text-indent: 0; letter-spacing: .5em; margin: 1.6em 0; }
+.story .end { font-variant: small-caps; letter-spacing: .2em; }
+.story ul.toc { list-style: none; padding: 0; margin: 1.2em 0 2em; text-align: center; font-size: .95rem; }
+.story ul.toc li { line-height: 1.7; }
+figure.plate { margin: 1.4em 0; text-align: center; text-indent: 0; }
+figure.plate img { max-width: 100%; max-height: 85vh; width: auto; height: auto; background: #fff; border: 1px solid var(--rule); cursor: zoom-in; }
+body.viewer { text-align: center; padding: 16px; }
+nav.back { margin: 0 0 .8em; text-align: left; font-size: .85rem; }
+nav.back a { text-decoration: none; }
+nav.back a:hover { text-decoration: underline; }
+figure.full { margin: 0; }
+figure.full img { max-width: 100%; max-height: 80vh; width: auto; height: auto; background: #fff; border: 1px solid var(--rule); }
+figure.full figcaption { font-variant: small-caps; letter-spacing: .05em; margin-top: .5em; }
+figure.full .credit { display: block; color: var(--mute); font-size: .68rem; margin-top: .9em; opacity: .75; }
+figure.full .credit a { color: inherit; text-decoration: none; border-bottom: 1px dotted currentColor; }
+figure.full .credit a:hover { opacity: 1; border-bottom-style: solid; }
+nav.steps { display: flex; justify-content: space-between; max-width: 40rem; margin: 1em auto; }
+/* ---- "aged paper" look: switched on by class="aged" on <html> (see paper.js) ----
+   Paper and ink colours measured from a colour scan of The Strand, January 1891. */
+html.aged {
+  --bg: #e3d7c4; --fg: #3a352e; --mute: #756a58; --rule: #c4b69c; --link: #5c2312;
+  color-scheme: light;
+}
+html.aged body {
+  background-color: var(--bg);
+  background-image: /* paper grain: fine fibre noise */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='g' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .32  0 0 0 0 .22  0 0 0 0 .08  0 0 0 .4 -.12'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+button.paper { font: inherit; color: var(--link); background: none; border: 1px solid var(--rule);
+               border-radius: 3px; padding: 1px 8px; margin-left: .6em; cursor: pointer; text-shadow: none; }
+figure.plate figcaption { font-variant: small-caps; letter-spacing: .05em; font-size: .85rem; margin-top: .4em; }
+figure.plate .credit { display: block; color: var(--mute); font-size: .68rem; line-height: 1.3; margin-top: .2em; }
+footer { border-top: 1px solid var(--rule); margin-top: 3em; padding-top: 1em; color: var(--mute);
+         font-size: .78rem; line-height: 1.45; }
+/* index */
+.when { color: var(--mute); font-size: .8em; font-style: italic; font-weight: 400;
+        letter-spacing: 0; text-transform: none; margin-left: .5em; white-space: nowrap; }
+body.index article { max-width: 46rem; }
+body.index h2 { text-align: left; font-size: 1.1rem; margin: 1.6em 0 .4em; font-weight: 400;
+                font-style: italic; border-bottom: 1px solid var(--rule); }
+body.index ul { list-style: none; padding: 0; margin: 0; columns: 2 18rem; font-size: 1rem; }
+body.index li { padding: 1px 0; break-inside: avoid; }
+body.index .code { color: var(--mute); font-size: .78rem; letter-spacing: .05em; margin-right: .5em; }
+@media print { nav.top { display: none; } body { background: #fff; color: #000; } }
