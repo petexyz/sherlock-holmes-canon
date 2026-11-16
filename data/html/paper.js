@@ -22,8 +22,8 @@
     if (!nav) return;
     var label = document.createElement("label");
     label.className = "mode";
-    label.appendChild(document.createTextNode("Mode "));
     var sel = document.createElement("select");
+    sel.setAttribute("aria-label", "Page mode");
     MODES.forEach(function (m) {
       var o = document.createElement("option");
       o.value = m;
