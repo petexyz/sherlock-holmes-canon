@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="11" fill="#15120f"/>
+<rect x="3.5" y="3.5" width="57" height="57" rx="8" fill="none" stroke="#d9b45a" stroke-width="2"/>
+<g fill="#e3c06a" font-family="Georgia, 'Times New Roman', serif" font-weight="700" text-anchor="middle">
+<text x="32" y="31" font-size="27" textLength="46" lengthAdjust="spacingAndGlyphs">221</text>
+<text x="32" y="55" font-size="27">B</text>
+</g>
+</svg>
