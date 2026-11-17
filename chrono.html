@@ -28,7 +28,10 @@
          font:15px/1.4 system-ui, sans-serif; }
   h1 { font-size:1.2rem; margin:0 0 4px; }
   p.note { margin:0 0 12px; color:var(--mute); font-size:.85rem; }
-  .wrap { overflow-x:auto; }
+  .wrap { overflow:auto; max-height:92vh; }
+  thead th { position:sticky; top:0; z-index:1; }
+  tbody tr { scroll-margin-top:3.5em; }
+  tbody tr:target td { background:var(--head); }
   table { border-collapse:collapse; width:100%; min-width:720px; }
   th, td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--line);
            vertical-align:top; }
