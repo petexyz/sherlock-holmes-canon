@@ -31,6 +31,9 @@ header { text-align: center; margin-bottom: 1.6em; }
 h1 { font-weight: 400; font-size: 1.7rem; letter-spacing: .04em; text-transform: uppercase;
      margin: .2em 0 .25em; line-height: 1.2; }
 .byline { font-variant: small-caps; letter-spacing: .08em; margin: .2em 0; }
+/* our own pages (contents, chronology, search): no capitals beyond the words as written */
+body.index h1 { text-transform: none; letter-spacing: .01em; }
+body.index .byline { font-variant: normal; letter-spacing: .02em; font-style: italic; }
 .dateline { font-size: .8rem; color: var(--mute); margin: .2em 0 0; }
 .dateline a { color: inherit; }
 .story { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
@@ -90,7 +93,7 @@ footer { border-top: 1px solid var(--rule); margin-top: 3em; padding-top: 1em; c
          font-size: .78rem; line-height: 1.45; }
 mark.hl { background: color-mix(in srgb, var(--link) 24%, transparent); color: inherit;
           border-radius: 2px; padding: .08em 0; }
-/* the Halbeisen chronology page */
+/* pages of dated evidence */
 body.dating ul { columns: auto; margin: 0 0 .6em 1.1em; list-style: disc; font-size: .95rem; }
 body.dating li { padding: .15em 0; break-inside: auto; }
 body.dating p.sum { text-indent: 0; margin: .4em 0 .6em; }
