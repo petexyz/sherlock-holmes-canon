@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>He looked up at us. &middot; The Stockbroker’s Clerk</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: The Stockbroker’s Clerk</a></nav>
+<figure class="full">
+<img src="../images/full/stoc-04.jpg" alt="A man at a table looks up as men enter at the door">
+<figcaption>He looked up at us.</figcaption>
+<small class="credit">Picture 4 of 7 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Strand_Magazine_(Volume_5)_-_p287.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="stoc-03.html">&larr; Previous picture</a><a class="step" href="stoc-05.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "stoc-04";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

@@ -6,4 +6,4 @@ illustrations from The Strand Magazine where available.
 - Story text: Project Gutenberg (public domain).
 - Illustrations: Sidney Paget (1860-1908), public domain, via Wikimedia Commons; each picture's
   viewer page links to its source.
-- Typeface: Old Standard TT, SIL Open Font Licence (see `data/html/fonts/`).
+- Typeface: Old Standard TT, SIL Open Font Licence (see `fonts/`).

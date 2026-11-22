@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mr. Henry Wood, I believe? &middot; The Crooked Man</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: The Crooked Man</a></nav>
+<figure class="full">
+<img src="../images/full/croo-05.jpg" alt="Holmes and Watson face a crouching man by a fireplace">
+<figcaption>Mr. Henry Wood, I believe?</figcaption>
+<small class="credit">Picture 5 of 7 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Crooked_Man_05,_The_Strand_Magazine,_Vol_6.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="croo-04.html">&larr; Previous picture</a><a class="step" href="croo-06.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "croo-05";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

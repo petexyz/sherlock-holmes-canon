@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sherlock Holmes Canon &middot; Search</title>
+<meta name="description" content="Search the full text of all sixty Sherlock Holmes stories for any word or phrase. Runs in the browser; nothing is sent anywhere.">
+<link rel="canonical" href="https://petexyz.github.io/sherlock-holmes-canon/search/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../style.css">
+<script src="../paper.js"></script>
+<style>
+  form.find { display:flex; flex-wrap:wrap; gap:.6em 1em; align-items:center; margin:1em 0 .4em; }
+  form.find input[type=search] { flex:1 1 16em; font:inherit; padding:.45em .6em; color:inherit;
+    background:transparent; border:1px solid currentColor; border-radius:4px; }
+  form.find button, form.find select { font:inherit; padding:.4em .8em; color:inherit;
+    background:transparent; border:1px solid currentColor; border-radius:4px; cursor:pointer; }
+  form.find label { font-size:.85em; white-space:nowrap; }
+  #tally { font-size:.9em; opacity:.8; margin:.6em 0 1.2em; }
+  .hit { margin:.5em 0 .5em 1em; line-height:1.5; }
+  .hit a { text-decoration:none; color:inherit; }
+  .hit a:hover { text-decoration:underline; }
+  .hit mark { background:#f2d16b; color:#1c1610; padding:0 .1em; border-radius:2px; }
+  .more { margin-left:1em; font-size:.85em; cursor:pointer; text-decoration:underline; background:none;
+    border:0; color:inherit; font-family:inherit; padding:0; }
+  h2 .txt { font-size:.7em; font-weight:400; margin-left:.6em; }
+</style>
+</head>
+<body class="index dating">
+<nav class="top"><a href="../">Home</a> <span>&middot;</span> <a href="../chronology/">Chronology</a> <span>&middot;</span> <a href="../history/">History</a> <span>&middot;</span> <a href="../lives/">Watson and Holmes</a> <span>&middot;</span> <a href="./">Search</a> <span>&middot;</span> <a href="../about/">About</a></nav>
+<article>
+<header><h1>Search the Canon</h1>
+<p class="byline">Every word of the four novels and fifty-six stories</p></header>
+<form class="find" id="find">
+<input type="search" id="q" placeholder="gasogene   or   &quot;the woman&quot;" autofocus>
+<button type="submit">Search</button>
+<label>In <select id="scope"><option value="">all sixty</option></select></label>
+<label>Order <select id="order"><option value="pub">as published</option><option value="hits">most passages first</option></select></label>
+</form>
+<p class="sum">Several words find passages that contain all of them. Put a phrase in &ldquo;double
+quotes&rdquo; to find those exact words together. Click a passage to open the story there, with
+the passage marked.</p>
+<p id="tally"></p>
+<div id="out"></div>
+</article>
+<script src="../search-index.js"></script>
+<script>
+(function () {
+  var stories = window.SH_INDEX || [];
+  var NOVELS = { STUD: 1, SIGN: 1, HOUN: 1, VALL: 1 };  /* this page always lives one level under site root */
+  var form = document.getElementById("find"), box = document.getElementById("q");
+  var scope = document.getElementById("scope"), order = document.getElementById("order");
+  var out = document.getElementById("out"), tally = document.getElementById("tally");
+  var SHOW = 5, MAX = 3000;
+
+  stories.forEach(function (s) {
+    var o = document.createElement("option");
+    o.value = s.c;
+    o.textContent = s.t;
+    scope.appendChild(o);
+  });
+
+  function esc(s) {
+    return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  }
+  function rx(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/['\u2018\u2019]/g, "['\u2018\u2019]")
+            .replace(/["\u201c\u201d]/g, "[\"\u201c\u201d]").replace(/\s+/g, "\\s+");
+  }
+  /* "a phrase" stays together; other words are matched whole, each on its own */
+  function terms(text) {
+    var list = [], m, re = /["\u201c]([^"\u201d]+)["\u201d]|(\S+)/g;
+    while ((m = re.exec(text))) {
+      var t = (m[1] || m[2]).replace(/^[^\w]+|[^\w]+$/g, "");
+      if (t) list.push(new RegExp("(^|[^A-Za-z0-9])(" + rx(t) + ")(?![A-Za-z0-9])", "i"));
+    }
+    return list;
+  }
+  function snippet(p, at, len) {
+    var a = Math.max(0, at - 90), b = Math.min(p.length, at + len + 130);
+    if (a > 0) a = p.indexOf(" ", a) + 1;
+    if (b < p.length) b = p.lastIndexOf(" ", b);
+    return [a, b];
+  }
+  /* a short run of words round the match: the story page finds and marks exactly this */
+  function anchor(p, at, len) {
+    var a = at, b = at + len, n;
+    for (n = 0; n < 4 && a > 0; n++) { a = p.lastIndexOf(" ", a - 2) + 1; }
+    for (n = 0; n < 5 && b < p.length; n++) { var k = p.indexOf(" ", b + 1); b = k < 0 ? p.length : k; }
+    return p.slice(a, b);
+  }
+
+  function run(push) {
+    var text = box.value.trim();
+    out.innerHTML = "";
+    if (!text) { tally.textContent = ""; return; }
+    var list = terms(text);
+    if (!list.length) { tally.textContent = "Nothing to search for."; return; }
+    var found = [], total = 0;
+    stories.forEach(function (s, order0) {
+      if (scope.value && scope.value !== s.c) return;
+      var hits = [];
+      s.p.forEach(function (p) {
+        var first = null;
+        for (var i = 0; i < list.length; i++) {
+          var m = list[i].exec(p);
+          if (!m) return;
+          if (i === 0) first = [m.index + m[1].length, m[2].length];
+        }
+        hits.push([p, first[0], first[1]]);
+      });
+      if (hits.length) { found.push({ s: s, hits: hits, n: order0 }); total += hits.length; }
+    });
+    if (order.value === "hits") {
+      found.sort(function (a, b) { return b.hits.length - a.hits.length || a.n - b.n; });
+    }
+    tally.textContent = total
+      ? total + (total === 1 ? " passage in " : " passages in ") + found.length + (found.length === 1 ? " story" : " stories")
+      : "No passage has " + (list.length > 1 ? "all of those words." : "that.");
+    var shown = 0;
+    found.forEach(function (f) {
+      var sec = document.createElement("section");
+      var kind = NOVELS[f.s.c] ? "novels" : "stories";
+      var page = "../" + kind + "/" + f.s.c.toLowerCase() + "/";
+      sec.innerHTML = '<h2><a href="' + page + '">' + esc(f.s.t) + '</a> <span class="when">' + f.hits.length +
+        '</span><a class="txt" href="../data/stories/' + f.s.c + '.txt">plain text</a></h2>';
+      f.hits.forEach(function (h, i) {
+        if (shown >= MAX) return;
+        shown++;
+        var p = h[0], cut = snippet(p, h[1], h[2]);
+        var body = esc(p.slice(cut[0], cut[1]));
+        list.forEach(function (re) {
+          body = body.replace(new RegExp(re.source, "gi"), function (all, pre, word) {
+            return pre + "\u0001" + word + "\u0002";
+          });
+        });
+        body = body.replace(/\u0001/g, "<mark>").replace(/\u0002/g, "</mark>");
+        var div = document.createElement("div");
+        div.className = "hit";
+        if (i >= SHOW) div.hidden = true;
+        div.innerHTML = '<a href="' + page + "?q=" + encodeURIComponent(anchor(p, h[1], h[2])) + '">' +
+          (cut[0] > 0 ? "&hellip; " : "") + body + (cut[1] < p.length ? " &hellip;" : "") + "</a>";
+        sec.appendChild(div);
+      });
+      if (f.hits.length > SHOW) {
+        var more = document.createElement("button");
+        more.className = "more";
+        more.type = "button";
+        more.textContent = "Show all " + f.hits.length;
+        more.addEventListener("click", function () {
+          Array.prototype.forEach.call(sec.querySelectorAll(".hit"), function (d) { d.hidden = false; });
+          more.remove();
+        });
+        sec.appendChild(more);
+      }
+      out.appendChild(sec);
+    });
+    if (push && window.history && history.replaceState) {
+      var u = "?q=" + encodeURIComponent(text) + (scope.value ? "&in=" + scope.value : "") +
+        (order.value === "hits" ? "&order=hits" : "");
+      try { history.replaceState(null, "", u); } catch (e) {}
+    }
+  }
+
+  form.addEventListener("submit", function (e) { e.preventDefault(); run(true); });
+  scope.addEventListener("change", function () { run(true); });
+  order.addEventListener("change", function () { run(true); });
+  var at = new URLSearchParams(location.search);
+  if (at.get("in")) scope.value = at.get("in");
+  if (at.get("order")) order.value = at.get("order");
+  if (at.get("q")) { box.value = at.get("q"); run(false); }
+})();
+</script>
+</body>
+</html>

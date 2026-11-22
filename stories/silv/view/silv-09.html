@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Silver Blaze. &middot; Silver Blaze</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: Silver Blaze</a></nav>
+<figure class="full">
+<img src="../images/full/silv-09.jpg" alt="Head of the racehorse Silver Blaze with the name lettered below">
+
+<small class="credit">Picture 1 of 9 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Strand_Magazine_(Volume_4)_-_p660.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><span></span><a class="step" href="silv-01.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "silv-09";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

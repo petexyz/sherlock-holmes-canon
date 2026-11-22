@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jim Browner. &middot; The Adventure of the Cardboard Box</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: The Adventure of the Cardboard Box</a></nav>
+<figure class="full">
+<img src="../images/full/card-05.jpg" alt="A uniformed steward stands with folded arms">
+<figcaption>Jim Browner.</figcaption>
+<small class="credit">Picture 4 of 8 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Strand_Magazine_(Volume_5)_-_p68.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="card-03.html">&larr; Previous picture</a><a class="step" href="card-04.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "card-05";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

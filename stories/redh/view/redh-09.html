@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;Mr. Merryweather stopped to light a lantern.&quot; &middot; The Red-Headed League</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: The Red-Headed League</a></nav>
+<figure class="full">
+<img src="../images/full/redh-09.jpg" alt="Four men in a group at the foot of some stairs; one holds up a lantern.">
+<figcaption>&quot;Mr. Merryweather stopped to light a lantern.&quot;</figcaption>
+<small class="credit">Picture 9 of 10 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Strand1891-V2_0200_(cropped).png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="redh-08.html">&larr; Previous picture</a><a class="step" href="redh-10.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "redh-09";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

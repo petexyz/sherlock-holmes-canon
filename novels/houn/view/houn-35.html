@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OVER THE ROCKS WAS THRUST OUT AN EVIL YELLOW FACE. &middot; The Hound of the Baskervilles</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: The Hound of the Baskervilles</a></nav>
+<figure class="full">
+<img src="../images/full/houn-35.jpg" alt="Two men crouching behind a boulder on the moor at night, a bearded face lit by a candle showing over the rocks.">
+<figcaption>OVER THE ROCKS WAS THRUST OUT AN EVIL YELLOW FACE.</figcaption>
+<small class="credit">Picture 35 of 60 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Houn-34_-_Hound_of_Baskervilles,_page_204.jpg">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="houn-33.html">&larr; Previous picture</a><a class="step" href="houn-34.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "houn-35";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

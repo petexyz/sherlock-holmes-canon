@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>It passed with a rattle and a roar. &middot; The Final Problem</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: The Final Problem</a></nav>
+<figure class="full">
+<img src="../images/full/fina-06.jpg" alt="Two men watch luggage on a station platform">
+<figcaption>It passed with a rattle and a roar.</figcaption>
+<small class="credit">Picture 6 of 9 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:The_Final_Problem_06,_The_Strand_Magazine,_Vol_6.png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="fina-05.html">&larr; Previous picture</a><a class="step" href="fina-07.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "fina-06";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&quot;HE BROKE THE SEAL AND GLANCED OVER THE CONTENTS.&quot; &middot; The Adventure of the Noble Bachelor</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: The Adventure of the Noble Bachelor</a></nav>
+<figure class="full">
+<img src="../images/full/nobl-01.jpg" alt="Holmes breaks the seal of a letter and glances over its contents.">
+<figcaption>&quot;HE BROKE THE SEAL AND GLANCED OVER THE CONTENTS.&quot;</figcaption>
+<small class="credit">Picture 1 of 8 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Strand1892-V3_0383_(cropped).png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><span></span><a class="step" href="nobl-03.html">Next picture &rarr;</a></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "nobl-01";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>

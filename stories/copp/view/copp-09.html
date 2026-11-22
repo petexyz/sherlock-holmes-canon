@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RUNNING UP, I BLEW ITS BRAINS OUT.&#x27; &middot; The Adventure of the Copper Beeches</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body class="viewer">
+<nav class="back"><a id="back" href="../index.html">&larr; Back to the story: The Adventure of the Copper Beeches</a></nav>
+<figure class="full">
+<img src="../images/full/copp-09.jpg" alt="A man shoots a large mastiff as it attacks Mr. Rucastle.">
+<figcaption>RUNNING UP, I BLEW ITS BRAINS OUT.&#x27;</figcaption>
+<small class="credit">Picture 9 of 9 &middot; Source: <a href="https://commons.wikimedia.org/wiki/File:Strand1892-V3_0622_(cropped).png">Wikimedia Commons</a></small>
+</figure>
+<nav class="steps"><a class="step" href="copp-08.html">&larr; Previous picture</a><span></span></nav>
+<script>
+// "from" is the picture first clicked in the story; the back link returns to that spot.
+var from = new URLSearchParams(location.search).get("from") || "copp-09";
+document.getElementById("back").href = "../index.html?pic=" + encodeURIComponent(from);
+document.querySelectorAll("a.step").forEach(function (a) {
+  a.addEventListener("click", function (e) {
+    e.preventDefault();
+    location.replace(a.getAttribute("href") + "?from=" + encodeURIComponent(from));
+  });
+});
+</script>
+</body>
+</html>
