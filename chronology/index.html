@@ -17,8 +17,10 @@
   html.dark { --head:#2e241a; }
   html.light { --head:#f1ecdd; }
   html.aged { --head:#d8cbb4; }
-  body { padding:16px; }
-  .wrap { overflow:auto; max-height:92vh; }
+  /* padding goes on the content, not body itself, so nav sits flush at the true top-left corner
+     the same as every other page (body itself carries zero padding in the shared stylesheet) */
+  header { padding:16px 16px 0; }
+  .wrap { padding:0 16px 16px; overflow:auto; max-height:92vh; }
   thead th { position:sticky; top:0; z-index:1; }
   tbody tr { scroll-margin-top:3.5em; }
   tbody tr:target td { background:var(--head); }
