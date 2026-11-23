@@ -7,30 +7,17 @@
 <meta name="description" content="When each Sherlock Holmes story is set, by chronologist, sortable column by column.">
 <link rel="canonical" href="https://petexyz.github.io/sherlock-holmes-canon/history/">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="stylesheet" href="../style.css">
 <style>
-  /* same three page modes as the story pages (../paper.js sets the class) */
-  :root { color-scheme: light dark; --bg:#fbf8ef; --fg:#1d1a14; --mute:#756f60; --line:#d9d1bc;
-          --head:#f1ecdd; --link:#7a2e1d; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg:#241b13; --fg:#e3d7c4; --mute:#a8957a; --line:#4b3c2c;
-            --head:#2e241a; --link:#dba46c; } }
-  html.light { color-scheme: light; --bg:#fbf8ef; --fg:#1d1a14; --mute:#756f60; --line:#d9d1bc;
-               --head:#f1ecdd; --link:#7a2e1d; }
-  html.dark { color-scheme: dark; --bg:#241b13; --fg:#e3d7c4; --mute:#a8957a; --line:#4b3c2c;
-              --head:#2e241a; --link:#dba46c; }
-  html.aged { color-scheme: light; --bg:#e3d7c4; --fg:#3a352e; --mute:#756a58; --line:#c4b69c;
-              --head:#d8cbb4; --link:#5c2312; }
-  nav.top { padding:10px 16px; font-size:.85rem; color:var(--mute); border-bottom:1px solid var(--line); }
-  label.mode { margin-left:.8em; white-space:nowrap; }
-  label.mode select { appearance:none; -webkit-appearance:none; font:inherit; color:var(--link);
-    background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='5'%3E%3Cpath d='M0 0l4 5 4-5z' fill='%238a7f6c'/%3E%3C/svg%3E") no-repeat right .1em center;
-    border:0; padding:0 .9em 0 0; margin:0; cursor:pointer; outline-offset:3px; }
-  label.mode select:hover { text-decoration:underline; }
-  label.mode select option { color:var(--fg); background:var(--bg); }
-  body { margin:0; padding:16px; background:var(--bg); color:var(--fg);
-         font:15px/1.4 system-ui, sans-serif; }
-  h1 { font-size:1.2rem; margin:0 0 4px; }
-  p.note { margin:0 0 12px; color:var(--mute); font-size:.85rem; }
+  /* table-specific additions only -- colours, body font, nav and header all come from the
+     shared stylesheet above, same as every other page; --head (the table-header tint) is the
+     one thing ../style.css has no equivalent for, so it gets the three page-mode variants here */
+  :root { --head:#f1ecdd; }
+  @media (prefers-color-scheme: dark) { :root { --head:#2e241a; } }
+  html.dark { --head:#2e241a; }
+  html.light { --head:#f1ecdd; }
+  html.aged { --head:#d8cbb4; }
+  body { padding:16px; }
   .cols { font-size:.85em; margin:.6em 0; line-height:2; }
   .cols label { margin-right:1em; white-space:nowrap; cursor:pointer; }
   .wrap { overflow:auto; max-height:92vh; }
@@ -38,7 +25,7 @@
   tbody tr { scroll-margin-top:3.5em; }
   tbody tr:target td { background:var(--head); }
   table { border-collapse:collapse; width:100%; min-width:720px; }
-  th, td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--line);
+  th, td { text-align:left; padding:6px 10px; border-bottom:1px solid var(--rule);
            vertical-align:top; }
   th { background:var(--head); cursor:pointer; user-select:none; white-space:nowrap;
        position:sticky; top:0; }
@@ -47,14 +34,13 @@
   td.none { color:var(--mute); }
   th small { color:var(--mute); font-weight:400; }
   td:nth-child(n+3) { white-space:nowrap; font-variant-numeric:tabular-nums; }
-  a { color:var(--link); }
 </style>
 <script src="../paper.js"></script>
 </head>
-<body>
+<body class="index">
 <nav class="top"><a href="../">Home</a> <span>&middot;</span> <a href="../chronology/">Chronology</a> <span>&middot;</span> <a href="./">History</a> <span>&middot;</span> <a href="../lives/">Watson and Holmes</a> <span>&middot;</span> <a href="../search/">Search</a> <span>&middot;</span> <a href="../about/">About</a></nav>
-<h1>Sherlock Holmes Canon: Historical Chronology</h1>
-<p class="note">When each case takes place, as opposed to when it was published. Doyle left few firm dates, so every column is one reading of the clues. Click a heading to sort by it. <b>Baring-Gould</b>: William S. Baring-Gould, whose dates (<i>The Chronological Holmes</i>, 1955; used again in <i>The Annotated Sherlock Holmes</i>, 1967) are the best-known standard. <b>Bell</b>: H. W. Bell, <i>Sherlock Holmes and Dr. Watson: The Chronology of Their Adventures</i>, the first full chronology. <b>Christ</b>: Jay Finley Christ, <i>An Irregular Chronology</i>. <b>Brend</b>: Gavin Brend, <i>My Dear Holmes</i>. <b>Zeisler</b>: Ernest Bloomfield Zeisler, <i>Baker Street Chronology</i>. <b>Keefauver</b>: Brad Keefauver&rsquo;s online chronology. <b>Crauser</b>: Jean-Pierre Crauser, a French chronology. <b>Miller</b>: Chris J. Miller&rsquo;s chronology (undated; our source gives no year), the most precise of the three lists we began with: a month or day for most cases. &ldquo;?&rdquo; marks his own doubt. <b>Klinger</b>: Leslie S. Klinger&rsquo;s table: the year most of fifteen chronologists agree on (Peck and Klinger, <i>&ldquo;The Date Being&mdash;?&rdquo;</i>, 1996). &ldquo;*&rdquo; means they did not agree and the year is the editor&rsquo;s choice. <b>Toronto</b>: the Bootmakers of Toronto&rsquo;s reading list (an undated web page that follows Klinger), year only. Dates for the published chronologists are taken from transcriptions on the web (mainly the Arthur Conan Doyle Encyclopedia), not checked against the books.</p>
+<header><h1>Sherlock Holmes Canon: Historical Chronology</h1>
+<p class="note">When each case takes place, as opposed to when it was published. Doyle left few firm dates, so every column is one reading of the clues. Click a heading to sort by it. <b>Baring-Gould</b>: William S. Baring-Gould, whose dates (<i>The Chronological Holmes</i>, 1955; used again in <i>The Annotated Sherlock Holmes</i>, 1967) are the best-known standard. <b>Bell</b>: H. W. Bell, <i>Sherlock Holmes and Dr. Watson: The Chronology of Their Adventures</i>, the first full chronology. <b>Christ</b>: Jay Finley Christ, <i>An Irregular Chronology</i>. <b>Brend</b>: Gavin Brend, <i>My Dear Holmes</i>. <b>Zeisler</b>: Ernest Bloomfield Zeisler, <i>Baker Street Chronology</i>. <b>Keefauver</b>: Brad Keefauver&rsquo;s online chronology. <b>Crauser</b>: Jean-Pierre Crauser, a French chronology. <b>Miller</b>: Chris J. Miller&rsquo;s chronology (undated; our source gives no year), the most precise of the three lists we began with: a month or day for most cases. &ldquo;?&rdquo; marks his own doubt. <b>Klinger</b>: Leslie S. Klinger&rsquo;s table: the year most of fifteen chronologists agree on (Peck and Klinger, <i>&ldquo;The Date Being&mdash;?&rdquo;</i>, 1996). &ldquo;*&rdquo; means they did not agree and the year is the editor&rsquo;s choice. <b>Toronto</b>: the Bootmakers of Toronto&rsquo;s reading list (an undated web page that follows Klinger), year only. Dates for the published chronologists are taken from transcriptions on the web (mainly the Arthur Conan Doyle Encyclopedia), not checked against the books.</p></header>
 <p class="cols" id="cols">Show: </p>
 <div class="wrap">
 <table id="t">
