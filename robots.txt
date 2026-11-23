@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://petexyz.github.io/sherlock-holmes-canon/sitemap.xml
+Sitemap: https://deerstalker.org/sitemap.xml
